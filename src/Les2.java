@@ -31,6 +31,10 @@ public class Les2 {
         double doubleNumber = 10.5;
         System.out.println(doubleNumber);
 
+        //<< деление на 2
+        //>> умнож на 2
+
+        System.out.println(10 >> 1);
 
 
 
