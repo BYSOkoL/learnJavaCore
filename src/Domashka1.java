@@ -24,11 +24,10 @@ public class Domashka1 {
             System.out.println("Can");
         } else if ((sh0 >= (sh1 + sh2)) && (d0 >= d1 && d0 >= d2)) {
             System.out.println("Can");
-        } else
-            System.out.println("Нельзя построить 2 дома");
+        } else System.out.println("Нельзя построить 2 дома");
     }
 }
 
 
-    }
-            }
+
+
