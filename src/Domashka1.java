@@ -9,22 +9,24 @@ public class Domashka1 {
         int sh2 = 1; //SHirina vtorogo
 
         if ((d0 >= (d1 + d2)) && (sh0 >= sh1 && sh0 >= sh2)) {
-            System.out.println("Can");
+            System.out.println("Можно построить два дома");
         } else if ((d0 >= (d1 + sh2)) && (sh0 >= sh1 && sh0 >= d2)) {
-            System.out.println("Can");
+            System.out.println("Можно построить два дома");
         } else if ((d0 >= (sh1 + d2)) && (sh0 >= d1 && sh0 >= sh2)) {
-            System.out.println("Can");
+            System.out.println("Можно построить два дома");
         } else if ((d0 >= (sh1 + sh2)) && (sh0 >= d1 && sh0 >= d2)) {
-            System.out.println("Can");
+            System.out.println("Можно построить два дома");
         } else if ((sh0 >= (d1 + d2)) && (d0 >= sh1 && d0 >= sh2)) {
-            System.out.println("Can");
+            System.out.println("Можно построить два дома");
         } else if ((sh0 >= (d1 + sh2)) && (d0 >= sh1 && d0 >= d2)) {
-            System.out.println("Can");
+            System.out.println("Можно построить два дома");
         } else if ((sh0 >= (sh1 + d2)) && (d0 >= d1 && d0 >= sh2)) {
-            System.out.println("Can");
+            System.out.println("Можно построить два дома");
         } else if ((sh0 >= (sh1 + sh2)) && (d0 >= d1 && d0 >= d2)) {
-            System.out.println("Can");
-        } else System.out.println("Нельзя построить 2 дома");
+            System.out.println("Можно построить два дома");
+        } else {
+            System.out.println("Нельзя построить два дома");
+        }
     }
 }
 
