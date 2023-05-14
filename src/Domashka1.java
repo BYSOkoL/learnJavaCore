@@ -1,6 +1,4 @@
-import java.sql.SQLOutput;
-
-public class Les2 {
+public class Domashka1 {
     public static void main(String[] args) {
 
         int number = 26556;
