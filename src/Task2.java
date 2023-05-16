@@ -11,12 +11,10 @@ public class Task2 {
         int secondDigit = 1;
         int c = 0;
         int summ = 0;
-        System.out.println(0);
         while (index <= needIndex - 1) {
             if (secondDigit % 2 == 0) {
                 summ += secondDigit;
             }
-            System.out.println(secondDigit);
             c = secondDigit;
             secondDigit = firstDigit + secondDigit;
             firstDigit = c;
