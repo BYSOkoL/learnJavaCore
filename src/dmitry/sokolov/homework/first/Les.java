@@ -1,3 +1,5 @@
+package dmitry.sokolov.homework.first;
+
 import java.util.Arrays;
 
 public class Les {

@@ -1,3 +1,5 @@
+package dmitry.sokolov.homework.first;
+
 public class Task4 {
     public static void main(String[] args) {
         int[][] array = new int[][] {{5,7,-3,-17}, {-7,-3,-1,12}, {8,-1,2,3}};

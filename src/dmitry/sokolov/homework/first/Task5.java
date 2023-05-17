@@ -1,3 +1,5 @@
+package dmitry.sokolov.homework.first;
+
 public class Task5 {
     public static void main(String[] args) {
         int[][] array = {

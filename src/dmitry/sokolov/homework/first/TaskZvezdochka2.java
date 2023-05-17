@@ -1,3 +1,5 @@
+package dmitry.sokolov.homework.first;
+
 public class TaskZvezdochka2 {
     public static void main(String[] args) {
         int[] students = new int[] {1, 3, 3, 3, 4, 2};

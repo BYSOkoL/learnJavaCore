@@ -1,3 +1,5 @@
+package dmitry.sokolov.homework.first;
+
 public class Task3 {
     public static void main(String[] args) {
         int[] array = new int[] {1, 2, 3, 4, 5, 6, -2, 13} ;
