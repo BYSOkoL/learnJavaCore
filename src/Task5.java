@@ -7,7 +7,6 @@ public class Task5 {
                 {1, 4, 4, 4}
         };
         boolean proverka = true;
-
         for (int y = 0; y < array.length; y++) {
             for (int x = array.length - 1; x > y; x--) {
                 if (array[y][x] != 0) {
