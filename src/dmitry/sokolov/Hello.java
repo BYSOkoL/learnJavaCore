@@ -1,4 +1,4 @@
-package dmitry.sokolov.homework.first;
+package dmitry.sokolov;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package dmitry.sokolov.homework.first;
+package dmitry.sokolov;
 
 public class Task0 {
     public static void main(String[] args) {
