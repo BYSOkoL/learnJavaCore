@@ -10,6 +10,5 @@ public class Task3 {
                 invertArray[j] = array[i];
             }
         }
-
     }
 }

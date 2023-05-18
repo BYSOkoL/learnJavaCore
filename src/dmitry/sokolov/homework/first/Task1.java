@@ -11,8 +11,6 @@ public class Task1 {
         for (int i = 0; i < array.length; i++) {
             if (array[i] != ignoreNumber) {
                 summArray += array[i];
-            } else {
-                continue;
             }
         }
         System.out.println(summArray);

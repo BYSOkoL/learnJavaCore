@@ -7,7 +7,6 @@ public class Task2 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("index?");
         int needIndex = scanner.nextInt();
-
         int index = 1;
         int firstDigit = 0;
         int secondDigit = 1;
@@ -21,10 +20,7 @@ public class Task2 {
             secondDigit = firstDigit + secondDigit;
             firstDigit = temp;
             index++;
-
         }
         System.out.println(summ);
-
-
     }
 }
