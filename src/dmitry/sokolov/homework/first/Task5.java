@@ -21,6 +21,5 @@ public class Task5 {
         if (nizhnTreug == true) {
             System.out.println("YES");
         }
-
     }
 }
