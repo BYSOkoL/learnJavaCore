@@ -11,15 +11,15 @@ public class Task2 {
         int index = 1;
         int firstDigit = 0;
         int secondDigit = 1;
-        int c = 0;
+        int temp = 0;
         int summ = 0;
         while (index <= needIndex - 1) {
             if (secondDigit % 2 == 0) {
                 summ += secondDigit;
             }
-            c = secondDigit;
+            temp = secondDigit;
             secondDigit = firstDigit + secondDigit;
-            firstDigit = c;
+            firstDigit = temp;
             index++;
 
         }

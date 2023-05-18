@@ -16,9 +16,7 @@ public class Task6 {
         };
         int[][] summArray = new int[array1.length][array2[0].length];
         for (int i = 0; i < array1.length; i++) {
-
             for (int j = 0; j < array2[0].length; j++) {
-
                 summArray[i][j] = array1[i][j] + array2[i][j];
                 System.out.print(summArray[i][j] + " ");
             }
