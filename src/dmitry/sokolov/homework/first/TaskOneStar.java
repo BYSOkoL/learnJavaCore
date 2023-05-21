@@ -20,7 +20,6 @@ public class TaskOneStar {
             previousNumb = finishChoice;
         }
         System.out.println(previousNumb);
-
     }
 }
 
