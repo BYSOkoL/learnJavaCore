@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 public class Task2BigInteger {
     public static void main(String[] args) {
-        int index = 1;
+        int index = 3;
         int needIndex = 12;
         BigInteger firstDigit = new BigInteger("0");
         BigInteger secondDigit = new BigInteger("1");

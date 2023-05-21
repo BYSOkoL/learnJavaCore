@@ -7,7 +7,7 @@ public class Task2 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("index?");
         int needIndex = scanner.nextInt();
-        int index = 1;
+        int index = 3;
         int firstDigit = 0;
         int secondDigit = 1;
         int temp = 0;

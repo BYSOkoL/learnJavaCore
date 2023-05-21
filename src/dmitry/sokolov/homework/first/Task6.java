@@ -22,5 +22,14 @@ public class Task6 {
             }
             System.out.println();
         }
+        System.out.println();
+        int[][] diffArray = new int[array1.length][array2[0].length];
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array2[0].length; j++) {
+                diffArray[i][j] = array1[i][j] - array2[i][j];
+                System.out.print(diffArray[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }

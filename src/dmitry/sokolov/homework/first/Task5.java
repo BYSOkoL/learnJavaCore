@@ -3,23 +3,31 @@ package dmitry.sokolov.homework.first;
 public class Task5 {
     public static void main(String[] args) {
         int[][] array = {
-                {1, 0, 0, 0},
-                {1, 1, 0, 0},
-                {1, 1, 3, 0},
-                {1, 4, 4, 4}
+                {1, 0, 0, 0, 0},
+                {1, 1, 0, 0, 0},
+                {1, 1, 3, 0, 0},
+                {1, 4, 4, 4, 0}
         };
-        boolean nizhnTreug = true;
-        for (int y = 0; y < array.length; y++) {
-            for (int x = array.length - 1; x > y; x--) {
-                if (array[y][x] != 0) {
-                    nizhnTreug = false;
-                    System.out.println("NO");
-                    return;
+        int maxI = 0;
+        int maxJ = 0;
+        boolean lowerTriangular = true;
+        for (int i = 0; i < array.length; i++) {
+            maxI = i + 1;
+            for (int j = array[i].length-1; j > i; j--) {
+                maxJ = j + 1;
+                if (array[i][j] != 0) {
+                    lowerTriangular = false;
                 }
             }
         }
-        if (nizhnTreug == true) {
-            System.out.println("YES");
+        if (maxI != maxJ) {
+            System.out.println("It's not a square");
+            return;
+        }
+        if (lowerTriangular == true) {
+            System.out.println("Its lower triangular matrix");
+        } else {
+            System.out.println("Its NOT lower triangular matrix");
         }
     }
 }
