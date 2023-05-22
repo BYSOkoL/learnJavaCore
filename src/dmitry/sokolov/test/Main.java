@@ -2,22 +2,29 @@ package dmitry.sokolov.test;
 
 import dmitry.sokolov.test.Box;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Main {
     public static void main(String[] args) {
-        Box [] boxes = {
-                new Box(1, 2, 3),
-                new Box(1, 2, 3),
-                new Box(1, 2, 3),
-                new Box(1, 2, 3),
-        };
-        int maxVolume = 0;
-        for (Box box:
-             boxes) {
-            int currentVolume = box.getBoxVolume();
-            if (currentVolume > maxVolume) {
-                maxVolume = currentVolume;
-            }
+      int number = Day.valueOf("THURSDAY").getDayNumber();
+        System.out.println(number);
+        System.out.println(Day.getNameByNumber(6));
+
+        Student Alex = new Student(University.BGU, "Alex");
+        Student Dmitry = new Student(University.BSEU, "Dmitry");
+        Student Elena = new Student(University.BSUIR, "Elena");
+
+        String demo = "I am demo string";
+        System.out.println(demo.matches("^\\D*\\s(demo\\s?){3}\\D*$"));
+
+        Pattern p = Pattern.compile(" +- +");
+        Matcher matcher = p.matcher("Test - string - test");
+
+        while (matcher.find()) {
+            System.out.println(matcher.start() + " " + matcher.end());
         }
-        System.out.println(maxVolume);
+
+
     }
 }
