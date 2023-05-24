@@ -1,4 +1,4 @@
-package dmitry.sokolov;
+package dmitry.sokolov.test;
 
 public enum Day1 {
     MONDAY(1),
