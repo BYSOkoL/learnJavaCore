@@ -1,6 +1,6 @@
-package dmitry.sokolov.test;
+package dmitry.sokolov;
 
-public enum Day {
+public enum Day1 {
     MONDAY(1),
     TUESDAY(2),
     WEDNESDAY(3),
@@ -9,7 +9,7 @@ public enum Day {
     SATURDAY(6),
     SUNDAY(7);
     private final int dayNumber;
-    Day(int dayNumber) {
+    Day1(int dayNumber) {
         this.dayNumber = dayNumber;
     }
 
@@ -17,8 +17,8 @@ public enum Day {
         return dayNumber;
     }
     public static String getNameByNumber (int dayNumber) {
-        for (Day day:
-             Day.values()) {
+        for (Day1 day:
+             Day1.values()) {
             if (day.dayNumber == dayNumber) {
                 return day.name();
             }
