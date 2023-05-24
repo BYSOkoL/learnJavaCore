@@ -15,8 +15,7 @@ public class Tri {
                 result = length;
             }
         }
-        if (result == null)
-        {
+        if (result == null) {
             System.out.println("NO");
         } else {
             System.out.println("longest:" + result);
