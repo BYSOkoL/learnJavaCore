@@ -1,14 +1,26 @@
-package dmitry.sokolov.homework.second.Task2;
+package dmitry.sokolov.homework.second.Task10;
 
-public class Box1 {
+import dmitry.sokolov.homework.second.Task2.BoxType;
+
+public class Box10 {
     private final int x;
     private final int y;
     private final int z;
 
-    public Box1(int x, int y, int z) {
+    public Box10(int x, int y, int z) {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public Box10(int y) {
+        this.z = this.x = this.y = y;
+    }
+
+    public Box10(int x, int y) {
+        this.x = x;
+        this.y = y;
+        this.z = 0;
     }
 
     public int getBoxVolume() {

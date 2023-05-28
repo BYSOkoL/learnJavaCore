@@ -9,6 +9,7 @@ public enum WeekDay {
     SATURDAY(6),
     SUNDAY(7);
     private final int dayNumber;
+
     WeekDay(int dayNumber) {
         this.dayNumber = dayNumber;
     }
@@ -16,9 +17,10 @@ public enum WeekDay {
     public int getDayNumber() {
         return dayNumber;
     }
-    public static String getNameByNumber (int dayNumber) {
+
+    public static String getNameByNumber(int dayNumber) {
         for (WeekDay weekDay :
-             WeekDay.values()) {
+                WeekDay.values()) {
             if (weekDay.dayNumber == dayNumber) {
                 return weekDay.name();
             }
