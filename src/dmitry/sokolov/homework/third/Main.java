@@ -8,6 +8,7 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car(1992,"i8",4.0,Colors.RED,WheelSize.BIG, Options.ABS)
+        Car car = new Car(1992,"i8",4.0,Colors.RED,WheelSize.BIG);
+        System.out.println(car);
     }
 }

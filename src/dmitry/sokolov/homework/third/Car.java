@@ -5,9 +5,7 @@ import dmitry.sokolov.homework.third.enums.Options;
 import dmitry.sokolov.homework.third.enums.WheelSize;
 import static java.lang.String.format;
 public class Car {
-    private static final String CAR_INFO = "CAR: {year: %s, model: %s engineVolume: %s, color: %s, wheelSize: %s, options: %s}";
-
-
+    private static final String CAR_INFO = "CAR: year - %s, model - %s engineVolume - %s, color - %s, wheelSize - %s, options - %s";
     protected final int year;
     protected final String model;
     protected final double engineVolume;
