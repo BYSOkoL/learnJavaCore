@@ -3,24 +3,19 @@ package dmitry.sokolov.homework.third;
 import dmitry.sokolov.homework.third.enums.Colors;
 import dmitry.sokolov.homework.third.enums.Options;
 import dmitry.sokolov.homework.third.enums.WheelSize;
+
+import java.util.Arrays;
+
 import static java.lang.String.format;
+
 public class Car {
-    private static final String CAR_INFO = "CAR: year - %s, model - %s engineVolume - %s, color - %s, wheelSize - %s, options - %s";
+    private static String[] carInfo = new String[8];
     protected final int year;
     protected final String model;
     protected final double engineVolume;
     protected Colors color;
     protected WheelSize wheelSize;
     protected Options options;
-
-    public Car(int year, String model, double engineVolume, Colors color, WheelSize wheelSize, Options options) {
-        this.year = year;
-        this.model = model;
-        this.engineVolume = engineVolume;
-        this.color = color;
-        this.wheelSize = wheelSize;
-        this.options = options;
-    }
 
     public Car(int year, String model, double engineVolume, Colors color, WheelSize wheelSize) {
         this.year = year;
@@ -29,6 +24,7 @@ public class Car {
         this.color = color;
         this.wheelSize = wheelSize;
     }
+
     public int getYear() {
         return year;
     }
@@ -61,20 +57,37 @@ public class Car {
         this.wheelSize = wheelSize;
     }
 
-    public void setOptions(Options options) {
-        this.options = options;
+    public void addOptions(Options option) {
+        int i = 0;
+        if (carInfo[5] == null){
+            i = 5;
+        } else if (carInfo[6] == null){
+            i = 6;
+        } else if (carInfo[7] == null) {
+            i = 7;
+        }
+
+        for (; i < carInfo.length; i++) {
+            carInfo[i] = option.toString();
+            break;
+        }
     }
 
-    @Override
-    public String toString() {
-        return format(
-                CAR_INFO,
-                year,
-                model,
-                engineVolume,
-                color,
-                wheelSize,
-                options
-        );
+    public void deleteOptions(Options option) {
+        for (int i = 5; i < carInfo.length; i++) {
+            if (carInfo[i].equalsIgnoreCase(option.toString())) {
+                carInfo[i] = null;
+            }
+        }
+    }
+
+    public void getCarInfo() {
+        carInfo[0] = String.valueOf(year);
+        carInfo[1] = model.toString();
+        carInfo[2] = String.valueOf(engineVolume);
+        carInfo[3] = color.toString();
+        carInfo[4] = wheelSize.toString();
+        System.out.println(Arrays.toString(carInfo));
     }
 }
+
