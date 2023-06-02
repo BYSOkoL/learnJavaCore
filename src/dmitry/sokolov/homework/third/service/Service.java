@@ -10,17 +10,14 @@ public class Service implements ServiceAddOptions,ServiceDeleteOptions, ServiceF
     public void addOptions(Options option) {
         ServiceAddOptions.super.addOptions(option);
     }
-
     @Override
     public void deleteOptions(Options option) {
         ServiceDeleteOptions.super.deleteOptions(option);
     }
-
     @Override
     public void changeColor(Car car, Colors color) {
         ServiceForChangeColor.super.changeColor(car, color);
     }
-
     @Override
     public void changeWheelSize(Car car, WheelSize wheelSize) {
         ServiceForChangeWheelSize.super.changeWheelSize(car, wheelSize);
