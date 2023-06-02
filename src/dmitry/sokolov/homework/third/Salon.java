@@ -1,9 +1,10 @@
 package dmitry.sokolov.homework.third;
+
 import dmitry.sokolov.homework.third.enums.*;
 import dmitry.sokolov.homework.third.factory.*;
 import dmitry.sokolov.homework.third.service.Service;
 
-public class Salon  {
+public class Salon {
     public static void main(String[] args) {
         Car car = new Car(2023, Models.A4, EngineVolumes.VOLUME_1_4, Colors.RED, WheelSize.BIG);
         Service service = new Service();
