@@ -38,13 +38,12 @@ public class Factory {
         this.engineVolumes = engineVolumes;
     }
 
-    public String getConfigurations() {
-        return format(
-                "Factory can produce: colors: %s, models: %s, wheelSizes: %s, engineVolumes: %s",
-                Arrays.toString(colors),
-                Arrays.toString(models),
-                Arrays.toString(wheelSizes),
-                Arrays.toString(engineVolumes)
-        );
+    public String toString() {
+        return
+                "Factory can produce: colors: " + Arrays.toString(colors) +
+                        ", models: %s" + Arrays.toString(models) +
+                        ", wheelSizes: %s" + Arrays.toString(wheelSizes) +
+                        ", engineVolumes: %s" + Arrays.toString(engineVolumes);
+
     }
 }
