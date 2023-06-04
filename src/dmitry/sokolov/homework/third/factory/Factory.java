@@ -7,6 +7,7 @@ import dmitry.sokolov.homework.third.enums.*;
 
 import static java.lang.String.format;
 
+import java.time.Year;
 import java.util.Arrays;
 
 public class Factory implements CreateCar {
@@ -48,8 +49,8 @@ public class Factory implements CreateCar {
         this.wheelSizes = wheelSizes;
         this.engineVolumes = engineVolume;
         this.storage = new Car[10];
-        this.storage[1] = new Car(2023, Models.A3, Colors.BLACK, EngineVolumes.VOLUME_1_4, WheelSize.BIG);
-        this.storage[2] = new Car(2023, Models.A3, Colors.BLACK,  EngineVolumes.VOLUME_1_4, WheelSize.BIG, new Options[] {Options.ABS});
+        this.storage[0] = new Car(2023, Models.A3, Colors.BLACK, EngineVolumes.VOLUME_1_4, WheelSize.BIG);
+        this.storage[1] = new Car(2023, Models.A3, Colors.BLACK,  EngineVolumes.VOLUME_1_4, WheelSize.BIG);
     }
 
 
@@ -64,23 +65,27 @@ public class Factory implements CreateCar {
 
     @Override
     public Car create(int year, Models model, EngineVolumes engineVolume, Colors color, WheelSize wheelSize, Options[] options) {
-        Car result = new Car(year, model, color, engineVolume, wheelSize, options);
-        return result;
+            return new Car(year, model, color, engineVolume, wheelSize);
     }
 
-    public Car orderCar(int year,Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize, Options[] options) {
+    public Car orderCar(int year, Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize, Options[] options) {
         if (options == null) {
             options = new Options[3];
         }
+        Car a = new Car (YEAR, model, color, engineVolume, wheelSize);
         if (orderProperties(model, color, engineVolume, wheelSize)) {
             for(var j = 0; j < storage.length; j++ ) {
-                if (storage[j] == orderCar (2023,model, color, engineVolume, wheelSize, options)) {
-                    storage[j] = null;
-                    System.out.println("Get car from storage:");
+                if (storage[j] != null) {
+                    if ((storage[j].getColor()).equals(a.getColor())) {
+                        storage[j] = null;
+                        System.out.println("Get car from storage:");
+                        create(YEAR, model, engineVolume, color, wheelSize, options);
+                        break;
+                    }
                 }
-
             }
         }
+        return null;
     }
     private boolean orderProperties(Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize) {
 
@@ -102,7 +107,9 @@ public class Factory implements CreateCar {
             correctProperties = true;
         }
         return correctProperties;
-    }}
+    }
+}
+
 //    private Car forServiceCar(Car car, Colors color, WheelSize wheelSize) {
 //
 //        if (!car.getColor().equals(color)) {
