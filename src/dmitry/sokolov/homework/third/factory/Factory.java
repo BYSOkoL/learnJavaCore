@@ -72,18 +72,15 @@ public class Factory implements CreateCar {
         if (options == null) {
             options = new Options[3];
         }
-        Car a = null;
         if (orderProperties(model, color, engineVolume, wheelSize)) {
             for(var j = 0; j < storage.length; j++ ) {
                 if (storage[j] == orderCar (2023,model, color, engineVolume, wheelSize, options)) {
                     storage[j] = null;
                     System.out.println("Get car from storage:");
-                    a = create(YEAR,model, engineVolume, color, wheelSize, options);
                 }
 
             }
         }
-        return a;
     }
     private boolean orderProperties(Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize) {
 
