@@ -12,9 +12,9 @@ public class Car {
     protected final EngineVolumes EngineVolume;
     protected Colors color;
     protected WheelSize wheelSize;
-    protected Options[] options;
+    protected Options[] options = new Options[3];
 
-    public Car(int year, Models model, EngineVolumes engineVolume, Colors color, WheelSize wheelSize) {
+    public Car(int year, Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize) {
         this.year = year;
         this.model = model;
         this.EngineVolume = engineVolume;
@@ -23,7 +23,7 @@ public class Car {
         this.options = new Options[3];
     }
 
-    public Car(int year, Models model, EngineVolumes engineVolume, Colors color, WheelSize wheelSize, Options[] options) {
+    public Car(int year, Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize, Options[] options) {
         this.year = year;
         this.model = model;
         this.EngineVolume = engineVolume;
