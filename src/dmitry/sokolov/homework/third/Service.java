@@ -7,13 +7,13 @@ import dmitry.sokolov.homework.third.enums.WheelSize;
 
 public class Service {
     Options[] options = new Options[3];
-    public void changeColor(Car car, Colors color) {
+    public static void changeColor(Car car, Colors color) {
         if (car != null && color != null) {
             car.setColor(color);
         }
     }
 
-    public void changeWheelSize(Car car, WheelSize wheelSize) {
+    public static void changeWheelSize(Car car, WheelSize wheelSize) {
         if (car != null && wheelSize != null) {
             car.setWheelSize(wheelSize);
         }

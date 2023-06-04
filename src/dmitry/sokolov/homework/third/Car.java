@@ -20,6 +20,18 @@ public class Car {
         this.EngineVolume = engineVolume;
         this.color = color;
         this.wheelSize = wheelSize;
+        this.options = new Options[3];
+    }
+
+    public Car(int year, Models model, EngineVolumes engineVolume, Colors color, WheelSize wheelSize, Options[] options) {
+        this.year = year;
+        this.model = model;
+        this.EngineVolume = engineVolume;
+        this.color = color;
+        this.wheelSize = wheelSize;
+        if (options == null) {
+            this.options = new Options[3];
+        }
     }
 
     public Colors getColor() {
@@ -40,13 +52,14 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car: " +
-                "year = " + year +
-                ", model = " + model +
-                ", EngineVolume = " + EngineVolume +
-                ", color = " + color +
-                ", wheelSize = " + wheelSize +
-                ", options: " + Arrays.toString(options);
+            return "Car: " +
+                    "year = " + year +
+                    ", model = " + model +
+                    ", EngineVolume = " + EngineVolume +
+                    ", color = " + color +
+                    ", wheelSize = " + wheelSize +
+                    ", options: " + Arrays.toString(options);
+
     }
 }
 
