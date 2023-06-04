@@ -20,15 +20,6 @@ public class Car {
         this.EngineVolume = engineVolume;
         this.color = color;
         this.wheelSize = wheelSize;
-        this.options = new Options[3];
-    }
-
-    public Car(int year, Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize, Options[] options) {
-        this.year = year;
-        this.model = model;
-        this.EngineVolume = engineVolume;
-        this.color = color;
-        this.wheelSize = wheelSize;
         if (options == null) {
             this.options = new Options[3];
         }
@@ -48,6 +39,14 @@ public class Car {
 
     public void setWheelSize(WheelSize wheelSize) {
         this.wheelSize = wheelSize;
+    }
+
+    public Options[] getOptions() {
+        return options;
+    }
+
+    public void setOptions(Options[] options) {
+        this.options = options;
     }
 
     @Override
