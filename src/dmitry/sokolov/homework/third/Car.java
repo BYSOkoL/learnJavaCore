@@ -29,6 +29,18 @@ public class Car {
         return color;
     }
 
+    public int getYear() {
+        return year;
+    }
+
+    public Models getModel() {
+        return model;
+    }
+
+    public EngineVolumes getEngineVolume() {
+        return EngineVolume;
+    }
+
     public WheelSize getWheelSize() {
         return wheelSize;
     }

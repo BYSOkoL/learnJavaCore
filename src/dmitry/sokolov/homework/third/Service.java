@@ -6,7 +6,7 @@ import dmitry.sokolov.homework.third.enums.Options;
 import dmitry.sokolov.homework.third.enums.WheelSize;
 
 public class Service {
-    Options[] options = new Options[3];
+    public static Options[] options = new Options[3];
     public static void changeColor(Car car, Colors color) {
         if (car != null && color != null) {
             car.setColor(color);
@@ -19,7 +19,7 @@ public class Service {
         }
     }
 
-    public void addOption(Options option) {
+    public static void addOption(Options option) {
         for (var i = 0; i < options.length; i++) {
             if (options[i] != null) {
                 continue;
@@ -29,7 +29,7 @@ public class Service {
             }
         }
     }
-    public void deleteOption(Options option) {
+    public static void deleteOption(Options option) {
         for (var i = 0; i < options.length; i++) {
             if (options[i] != option) {
                 continue;

@@ -2,6 +2,7 @@ package dmitry.sokolov.homework.third.factory;
 
 import dmitry.sokolov.homework.third.Car;
 import dmitry.sokolov.homework.third.CreateCar;
+import dmitry.sokolov.homework.third.Salon;
 import dmitry.sokolov.homework.third.Service;
 import dmitry.sokolov.homework.third.enums.*;
 
@@ -72,20 +73,28 @@ public class Factory implements CreateCar {
         if (options == null) {
             options = new Options[3];
         }
-        Car a = new Car (YEAR, model, color, engineVolume, wheelSize);
+        Car a = new Car(YEAR, model, color, engineVolume, wheelSize);
         if (orderProperties(model, color, engineVolume, wheelSize)) {
-            for(var j = 0; j < storage.length; j++ ) {
+            for (var j = 0; j < storage.length; j++) {
                 if (storage[j] != null) {
-                    if ((storage[j].getColor()).equals(a.getColor())) {
-                        storage[j] = null;
-                        System.out.println("Get car from storage:");
-                        create(YEAR, model, engineVolume, color, wheelSize, options);
-                        break;
+                    if (((storage[j].getColor()).equals(a.getColor())) &&
+                            ((storage[j].getModel()).equals(a.getModel())) &&
+                            ((storage[j].getEngineVolume())).equals(a.getEngineVolume()) &&
+                            ((storage[j].getWheelSize())).equals(a.getWheelSize())
+                    ) {
+                        if (Arrays.equals(storage[j].getOptions(), a.getOptions())) {
+                        }
+                        {
+                            storage[j] = null;
+                            System.out.println("Get car from storage: " + a.toString());
+                            create(YEAR, model, engineVolume, color, wheelSize, options);
+                            break;
+                        }
                     }
                 }
             }
         }
-        return null;
+            return null;
     }
     private boolean orderProperties(Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize) {
 
