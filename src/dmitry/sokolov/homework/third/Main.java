@@ -1,12 +1,9 @@
 package dmitry.sokolov.homework.third;
 
 import dmitry.sokolov.homework.third.enums.*;
-import dmitry.sokolov.homework.third.*;
 import dmitry.sokolov.homework.third.factory.Factory;
 
-import java.util.Arrays;
-
-public class main {
+public class Main {
     public static void main(String[] args) {
         Service service = new Service();
         Service.addOption(Options.ESP);
