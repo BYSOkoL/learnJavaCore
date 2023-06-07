@@ -12,7 +12,7 @@ public class Main {
         Service service = new Service();
         Service.addOption(car, Options.ESP);
         Service.addOption(car, Options.ABS);
-        Service.deleteOption(car, Options.PDC);
+        Service.deleteOption(car, Options.ESP);
         System.out.println(car.toString());
     }
 }

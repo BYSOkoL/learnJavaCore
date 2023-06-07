@@ -16,7 +16,6 @@ public class Service {
             car.setWheelSize(wheelSize);
         }
     }
-
     public static void addOption(Car car, Options option) {
         for (var i = 0; i < car.options.length; i++) {
             if (car.options[i] != null) {
