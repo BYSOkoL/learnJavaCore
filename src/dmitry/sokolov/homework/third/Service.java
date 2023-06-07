@@ -6,40 +6,38 @@ import dmitry.sokolov.homework.third.enums.Options;
 import dmitry.sokolov.homework.third.enums.WheelSize;
 
 public class Service {
-    public static Options[] options = new Options[3];
     public static void changeColor(Car car, Colors color) {
-        if (car != null && color != null) {
+        if ((car != null && color != null) && (car.color != color)) {
             car.setColor(color);
         }
     }
-
     public static void changeWheelSize(Car car, WheelSize wheelSize) {
-        if (car != null && wheelSize != null) {
+        if ((car != null && wheelSize != null) && (car.wheelSize != wheelSize)) {
             car.setWheelSize(wheelSize);
         }
     }
 
-    public static void addOption(Options option) {
-        for (var i = 0; i < options.length; i++) {
-            if (options[i] != null) {
+    public static void addOption(Car car, Options option) {
+        for (var i = 0; i < car.options.length; i++) {
+            if (car.options[i] != null) {
                 continue;
             } else {
-                options[i] = option;
+                car.options[i] = option;
                 break;
             }
         }
     }
-    public static void deleteOption(Options option) {
-        for (var i = 0; i < options.length; i++) {
-            if (options[i] != option) {
+    public static void deleteOption(Car car, Options option) {
+        for (var i = 0; i < car.options.length; i++) {
+            if (car.options[i] != option) {
                 continue;
             } else {
-                options[i] = null;
+                car.options[i] = null;
                 break;
             }
         }
     }
-    public void setOptions (Car car){
+    public void setOptions (Car car, Options[] options){
         car.options = options;
     }
 }

@@ -9,7 +9,8 @@ public class Box extends ThreeDimension implements Rib, Angle, Area {
     private final double b;
     private final double c;
 
-    public Box(double a, double b, double c) {
+    public Box(String name,double a, double b, double c) {
+        super(name);
         this.a = a;
         this.b = b;
         this.c = c;

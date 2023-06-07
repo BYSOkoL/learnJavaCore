@@ -3,7 +3,8 @@ package dmitry.sokolov.classwork.Task6.figures.threedemension;
 public class Sphere extends ThreeDimension {
     private final double r;
 
-    public Sphere(double r) {
+    public Sphere(String name, double r) {
+        super(name);
         this.r = r;
     }
 

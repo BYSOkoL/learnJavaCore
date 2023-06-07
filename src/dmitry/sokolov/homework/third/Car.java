@@ -24,6 +24,16 @@ public class Car {
             this.options = new Options[3];
         }
     }
+    public Car(int year, Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize, Options[] options) {
+        this.year = year;
+        this.model = model;
+        this.EngineVolume = engineVolume;
+        this.color = color;
+        this.wheelSize = wheelSize;
+        if (options == null) {
+            this.options = new Options[3];
+        }
+    }
 
     public Colors getColor() {
         return color;

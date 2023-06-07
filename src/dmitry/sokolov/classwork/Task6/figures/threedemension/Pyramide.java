@@ -10,7 +10,8 @@ public class Pyramide extends ThreeDimension implements Rib, Angle, Area {
     private final double c;
     private final double h;
 
-    public Pyramide(double a, double b, double c, double h) {
+    public Pyramide(String name, double a, double b, double c, double h) {
+        super(name);
         this.a = a;
         this.b = b;
         this.c = c;
