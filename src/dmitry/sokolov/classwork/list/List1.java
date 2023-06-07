@@ -1,12 +1,10 @@
 package dmitry.sokolov.classwork.list;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
-public class list {
+public class List1 {
     public static void main(String[] args) {
-        List<Integer> numbers = new LinkedList<>();
+        java.util.List<Integer> numbers = new LinkedList<>();
         System.out.println(numbers.size());
 
         numbers.add(12);

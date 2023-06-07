@@ -1,10 +1,11 @@
 package dmitry.sokolov.classwork.list;
 
 import java.util.*;
+import java.util.List;
 
-public class listTask {
+public class ListTask {
     public static void main(String[] args) {
-//        List<Integer> numbers = new ArrayList<>();
+//        List1<Integer> numbers = new ArrayList<>();
 //        numbers.add(12);
 //        numbers.add(22);
 //        numbers.add(32);
