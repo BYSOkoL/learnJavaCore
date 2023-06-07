@@ -5,7 +5,7 @@ import dmitry.sokolov.homework.third.factory.Factory;
 import dmitry.sokolov.homework.third.*;
 
 public class Salon {
-    protected Factory factory;
+    protected Factory factory = new Factory(new Model[] {Model.A3},new Color[]{Color.BLACK}, new WheelSize[] {WheelSize.BIG}, new EngineVolume[]{EngineVolume.VOLUME_1_4});
     protected Service service;
     public Car makeCarOrder (Model model, Color color, EngineVolume engineVolume, WheelSize wheelSize, Option[] options) {
        return factory.orderCar(model, color, engineVolume, wheelSize, options);

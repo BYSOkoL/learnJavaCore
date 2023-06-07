@@ -2,6 +2,7 @@ package dmitry.sokolov.homework.third.factory;
 
 import dmitry.sokolov.homework.third.Car;
 import dmitry.sokolov.homework.third.CreateCar;
+import dmitry.sokolov.homework.third.factory.Storage;
 import dmitry.sokolov.homework.third.enums.*;
 
 import static java.lang.String.format;
@@ -14,6 +15,8 @@ public class Factory implements CreateCar {
     private final Model[] models;
     private final WheelSize[] wheelSizes;
     private final EngineVolume[] engineVolumes;
+//    protected Car[] storage;
+    protected Storage storage;
 
     public Color[] getColors() {
         return colors;
@@ -31,7 +34,6 @@ public class Factory implements CreateCar {
         return engineVolumes;
     }
 
-    protected Car[] storage;
 
     public Factory(Model[] models, Color[] colors, WheelSize[] wheelSizes, EngineVolume[] engineVolume) {
         if (models == null || colors == null || engineVolume == null || wheelSizes == null) {
@@ -41,9 +43,13 @@ public class Factory implements CreateCar {
         this.models = models;
         this.wheelSizes = wheelSizes;
         this.engineVolumes = engineVolume;
-        this.storage = new Car[10];
-        this.storage[0] = new Car(2023, Model.A3, Color.BLACK, EngineVolume.VOLUME_1_4, WheelSize.BIG, new Option[]{Option.PDC});
-        this.storage[1] = new Car(2023, Model.A3, Color.BLACK, EngineVolume.VOLUME_1_4, WheelSize.BIG, new Option[]{Option.PDC});
+        storage = new Storage(new Car[]{create(Model.A3, EngineVolume.VOLUME_1_4, Color.RED, WheelSize.BIG, new Option[]{Option.PDC, Option.ABS}),
+                create(Model.A3, EngineVolume.VOLUME_1_4, Color.RED, WheelSize.BIG, new Option[]{Option.PDC, Option.ABS}),
+                create(Model.A3, EngineVolume.VOLUME_1_4, Color.RED, WheelSize.BIG, new Option[]{Option.PDC, Option.ABS})});
+
+//        storage = new Car[]{create(Model.A3, EngineVolume.VOLUME_1_4,Color.RED, WheelSize.BIG, new Option[] {Option.PDC, Option.ABS}),
+//                create(Model.A3, EngineVolume.VOLUME_1_4,Color.RED, WheelSize.BIG, new Option[] {Option.PDC, Option.ABS}),
+//                create(Model.A3, EngineVolume.VOLUME_1_4,Color.RED, WheelSize.BIG, new Option[] {Option.PDC, Option.ABS})};
     }
 
 
@@ -52,7 +58,8 @@ public class Factory implements CreateCar {
                 "Factory can produce: colors: " + Arrays.toString(colors) +
                         ", models: " + Arrays.toString(models) +
                         ", wheelSizes: " + Arrays.toString(wheelSizes) +
-                        ", engineVolumes: " + Arrays.toString(engineVolumes);
+                        ", engineVolumes: " + Arrays.toString(engineVolumes) +
+                ", \n storage: " + Arrays.toString(storage.getStorage());
 
     }
 
@@ -67,17 +74,17 @@ public class Factory implements CreateCar {
         }
         Car a = new Car(YEAR, model, color, engineVolume, wheelSize, options);
         if (orderProperties(model, color, engineVolume, wheelSize)) {
-            for (var j = 0; j < storage.length; j++) {
-                if (storage[j] != null) {
-                    if (((storage[j].getColor()).equals(a.getColor())) &&
-                            ((storage[j].getModel()).equals(a.getModel())) &&
-                            ((storage[j].getEngineVolume())).equals(a.getEngineVolume()) &&
-                            ((storage[j].getWheelSize())).equals(a.getWheelSize())
+            for (var j = 0; j < storage.getStorage().length; j++) {
+                if (storage.getStorage()[j] != null) {
+                    if (((storage.getStorage()[j].getColor()).equals(a.getColor())) &&
+                            ((storage.getStorage()[j].getModel()).equals(a.getModel())) &&
+                            ((storage.getStorage()[j].getEngineVolume())).equals(a.getEngineVolume()) &&
+                            ((storage.getStorage()[j].getWheelSize())).equals(a.getWheelSize())
                     ) {
-                        if (Arrays.equals(storage[j].getOptions(), a.getOptions())) {
+                        if (Arrays.equals(storage.getStorage()[j].getOptions(), a.getOptions())) {
                         }
                         {
-                            storage[j] = null;
+                            storage.deleteFromStorage(a);
                             System.out.println("Get car from storage: " + a.toString());
                             return a;
                         }
