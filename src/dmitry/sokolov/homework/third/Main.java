@@ -17,5 +17,6 @@ public class Main {
         service.deleteOption(car, Option.PDC);
         service.deleteOption(car, Option.ESP);
         System.out.println(car.toString());
+
     }
 }

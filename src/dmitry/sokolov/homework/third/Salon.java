@@ -2,6 +2,7 @@ package dmitry.sokolov.homework.third;
 
 import dmitry.sokolov.homework.third.enums.*;
 import dmitry.sokolov.homework.third.factory.Factory;
+import dmitry.sokolov.homework.third.*;
 
 public class Salon {
     protected Factory factory;
