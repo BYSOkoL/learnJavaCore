@@ -25,5 +25,14 @@ public class Box {
     public int getZ() {
         return z;
     }
+
+    @Override
+    public String toString() {
+        return "Box{" +
+                "x=" + x +
+                ", y=" + y +
+                ", z=" + z +
+                '}';
+    }
 }
 
