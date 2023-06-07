@@ -2,27 +2,24 @@ package dmitry.sokolov.homework.third.factory;
 
 import dmitry.sokolov.homework.third.Car;
 import dmitry.sokolov.homework.third.CreateCar;
-import dmitry.sokolov.homework.third.Salon;
-import dmitry.sokolov.homework.third.Service;
 import dmitry.sokolov.homework.third.enums.*;
 
 import static java.lang.String.format;
 
-import java.time.Year;
 import java.util.Arrays;
 
 public class Factory implements CreateCar {
     private static final int YEAR = 2023;
-    private final Colors[] colors;
-    private final Models[] models;
+    private final Color[] colors;
+    private final Model[] models;
     private final WheelSize[] wheelSizes;
-    private final EngineVolumes[] engineVolumes;
+    private final EngineVolume[] engineVolumes;
 
-    public Colors[] getColors() {
+    public Color[] getColors() {
         return colors;
     }
 
-    public Models[] getModels() {
+    public Model[] getModels() {
         return models;
     }
 
@@ -30,18 +27,13 @@ public class Factory implements CreateCar {
         return wheelSizes;
     }
 
-    public EngineVolumes[] getEngineVolumes() {
+    public EngineVolume[] getEngineVolumes() {
         return engineVolumes;
     }
 
     protected Car[] storage;
-    boolean correctProperties = false;
-    boolean correctModel = false;
-    boolean correctColor = false;
-    boolean correctEngineVolume = false;
-    boolean correctWheelSize = false;
 
-    public Factory(Models[] models, Colors[] colors,  WheelSize[] wheelSizes, EngineVolumes[] engineVolume) {
+    public Factory(Model[] models, Color[] colors, WheelSize[] wheelSizes, EngineVolume[] engineVolume) {
         if (models == null || colors == null || engineVolume == null || wheelSizes == null) {
             System.out.println("null in factory");
         }
@@ -50,8 +42,8 @@ public class Factory implements CreateCar {
         this.wheelSizes = wheelSizes;
         this.engineVolumes = engineVolume;
         this.storage = new Car[10];
-        this.storage[0] = new Car(2023, Models.A3, Colors.BLACK, EngineVolumes.VOLUME_1_4, WheelSize.BIG);
-        this.storage[1] = new Car(2023, Models.A3, Colors.BLACK,  EngineVolumes.VOLUME_1_4, WheelSize.BIG);
+        this.storage[0] = new Car(2023, Model.A3, Color.BLACK, EngineVolume.VOLUME_1_4, WheelSize.BIG, new Option[]{Option.PDC});
+        this.storage[1] = new Car(2023, Model.A3, Color.BLACK, EngineVolume.VOLUME_1_4, WheelSize.BIG, new Option[]{Option.PDC});
     }
 
 
@@ -65,15 +57,15 @@ public class Factory implements CreateCar {
     }
 
     @Override
-    public Car create(int year, Models model, EngineVolumes engineVolume, Colors color, WheelSize wheelSize, Options[] options) {
-            return new Car(year, model, color, engineVolume, wheelSize);
+    public Car create(Model model, EngineVolume engineVolume, Color color, WheelSize wheelSize, Option[] options) {
+        return new Car(YEAR, model, color, engineVolume, wheelSize, options);
     }
 
-    public Car orderCar(int year, Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize, Options[] options) {
+    public Car orderCar(Model model, Color color, EngineVolume engineVolume, WheelSize wheelSize, Option[] options) {
         if (options == null) {
-            options = new Options[3];
+            options = new Option[3];
         }
-        Car a = new Car(YEAR, model, color, engineVolume, wheelSize);
+        Car a = new Car(YEAR, model, color, engineVolume, wheelSize, options);
         if (orderProperties(model, color, engineVolume, wheelSize)) {
             for (var j = 0; j < storage.length; j++) {
                 if (storage[j] != null) {
@@ -87,17 +79,21 @@ public class Factory implements CreateCar {
                         {
                             storage[j] = null;
                             System.out.println("Get car from storage: " + a.toString());
-                            create(YEAR, model, engineVolume, color, wheelSize, options);
-                            break;
+                            return a;
                         }
                     }
                 }
             }
         }
-            return null;
+        return create(model, engineVolume, color, wheelSize, options);
     }
-    private boolean orderProperties(Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize) {
 
+    private boolean orderProperties(Model model, Color color, EngineVolume engineVolume, WheelSize wheelSize) {
+        boolean correctProperties = false;
+        boolean correctModel = false;
+        boolean correctColor = false;
+        boolean correctEngineVolume = false;
+        boolean correctWheelSize = false;
         for (var i = 0; i < models.length; i++) {
             if (models[i] == model) {
                 correctModel = true;
@@ -117,9 +113,10 @@ public class Factory implements CreateCar {
         }
         return correctProperties;
     }
+
 }
 
-//    private Car forServiceCar(Car car, Colors color, WheelSize wheelSize) {
+//    private Car forServiceCar(Car car, Color color, WheelSize wheelSize) {
 //
 //        if (!car.getColor().equals(color)) {
 //            Service.changeColor(car, color);

@@ -8,34 +8,26 @@ import static java.lang.String.format;
 
 public class Car {
     protected final int year;
-    protected final Models model;
-    protected final EngineVolumes EngineVolume;
-    protected Colors color;
+    protected final Model model;
+    protected final dmitry.sokolov.homework.third.enums.EngineVolume EngineVolume;
+    protected Color color;
     protected WheelSize wheelSize;
-    protected Options[] options = new Options[3];
+    protected Option[] options;
 
-    public Car(int year, Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize) {
+    public Car(int year, Model model, Color color, dmitry.sokolov.homework.third.enums.EngineVolume engineVolume, WheelSize wheelSize, Option[] options) {
         this.year = year;
         this.model = model;
         this.EngineVolume = engineVolume;
         this.color = color;
         this.wheelSize = wheelSize;
+        this.options = options;
         if (options == null) {
-            this.options = new Options[3];
+            this.options = new Option[3];
         }
-    }
-    public Car(int year, Models model, Colors color, EngineVolumes engineVolume, WheelSize wheelSize, Options[] options) {
-        this.year = year;
-        this.model = model;
-        this.EngineVolume = engineVolume;
-        this.color = color;
-        this.wheelSize = wheelSize;
-        if (options == null) {
-            this.options = new Options[3];
-        }
+
     }
 
-    public Colors getColor() {
+    public Color getColor() {
         return color;
     }
 
@@ -43,11 +35,11 @@ public class Car {
         return year;
     }
 
-    public Models getModel() {
+    public Model getModel() {
         return model;
     }
 
-    public EngineVolumes getEngineVolume() {
+    public dmitry.sokolov.homework.third.enums.EngineVolume getEngineVolume() {
         return EngineVolume;
     }
 
@@ -55,7 +47,7 @@ public class Car {
         return wheelSize;
     }
 
-    public void setColor(Colors color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 
@@ -63,11 +55,11 @@ public class Car {
         this.wheelSize = wheelSize;
     }
 
-    public Options[] getOptions() {
+    public Option[] getOptions() {
         return options;
     }
 
-    public void setOptions(Options[] options) {
+    public void setOptions(Option[] options) {
         this.options = options;
     }
 
