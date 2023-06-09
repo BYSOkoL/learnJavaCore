@@ -13,7 +13,6 @@ public class Factory implements CreateCar {
     private final Model[] models;
     private final WheelSize[] wheelSizes;
     private final EngineVolume[] engineVolumes;
-    //    protected Car[] storage;
     protected Storage storage;
 
     public Color[] getColors() {
