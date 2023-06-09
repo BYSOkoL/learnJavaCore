@@ -2,10 +2,8 @@ package dmitry.sokolov.homework.third.factory;
 
 import dmitry.sokolov.homework.third.Car;
 import dmitry.sokolov.homework.third.CreateCar;
-import dmitry.sokolov.homework.third.factory.Storage;
+import dmitry.sokolov.homework.third.Service;
 import dmitry.sokolov.homework.third.enums.*;
-
-import static java.lang.String.format;
 
 import java.util.Arrays;
 
@@ -15,7 +13,7 @@ public class Factory implements CreateCar {
     private final Model[] models;
     private final WheelSize[] wheelSizes;
     private final EngineVolume[] engineVolumes;
-//    protected Car[] storage;
+    //    protected Car[] storage;
     protected Storage storage;
 
     public Color[] getColors() {
@@ -46,10 +44,6 @@ public class Factory implements CreateCar {
         storage = new Storage(new Car[]{create(Model.A3, EngineVolume.VOLUME_1_4, Color.RED, WheelSize.BIG, new Option[]{Option.PDC, Option.ABS}),
                 create(Model.A3, EngineVolume.VOLUME_1_4, Color.RED, WheelSize.BIG, new Option[]{Option.PDC, Option.ABS}),
                 create(Model.A3, EngineVolume.VOLUME_1_4, Color.RED, WheelSize.BIG, new Option[]{Option.PDC, Option.ABS})});
-
-//        storage = new Car[]{create(Model.A3, EngineVolume.VOLUME_1_4,Color.RED, WheelSize.BIG, new Option[] {Option.PDC, Option.ABS}),
-//                create(Model.A3, EngineVolume.VOLUME_1_4,Color.RED, WheelSize.BIG, new Option[] {Option.PDC, Option.ABS}),
-//                create(Model.A3, EngineVolume.VOLUME_1_4,Color.RED, WheelSize.BIG, new Option[] {Option.PDC, Option.ABS})};
     }
 
 
@@ -59,7 +53,7 @@ public class Factory implements CreateCar {
                         ", models: " + Arrays.toString(models) +
                         ", wheelSizes: " + Arrays.toString(wheelSizes) +
                         ", engineVolumes: " + Arrays.toString(engineVolumes) +
-                ", \n storage: " + Arrays.toString(storage.getStorage());
+                        ", \n storage: " + Arrays.toString(storage.getStorage());
 
     }
 
@@ -78,14 +72,34 @@ public class Factory implements CreateCar {
                 if (storage.getStorage()[j] != null) {
                     if (((storage.getStorage()[j].getColor()).equals(a.getColor())) &&
                             ((storage.getStorage()[j].getModel()).equals(a.getModel())) &&
-                            ((storage.getStorage()[j].getEngineVolume())).equals(a.getEngineVolume()) &&
-                            ((storage.getStorage()[j].getWheelSize())).equals(a.getWheelSize())
-                    ) {
+                            ((storage.getStorage()[j].getEngineVolume()).equals(a.getEngineVolume())) &&
+                            ((storage.getStorage()[j].getWheelSize()).equals(a.getWheelSize()))) {
                         if (Arrays.equals(storage.getStorage()[j].getOptions(), a.getOptions())) {
-                        }
-                        {
                             storage.deleteFromStorage(a);
                             System.out.println("Get car from storage: " + a.toString());
+                            return a;
+                        } else {
+                            Service.setOptions(a, options);
+                            storage.deleteFromStorage(a);
+                            System.out.println("Get car from storage + set options: " + a.toString());
+                            return a;
+                        }
+                    } else if (((storage.getStorage()[j].getModel()).equals(a.getModel())) &&
+                            ((storage.getStorage()[j].getEngineVolume())).equals(a.getEngineVolume())) {
+                        if ((!(storage.getStorage()[j].getColor()).equals(a.getColor()))) {
+                            Service.changeColor(a, color);
+                        }
+                        if ((!(storage.getStorage()[j].getWheelSize()).equals(a.getWheelSize()))) {
+                            Service.changeWheelSize(a, wheelSize);
+                        }
+                        if (Arrays.equals(storage.getStorage()[j].getOptions(), a.getOptions())) {
+                            storage.deleteFromStorage(a);
+                            System.out.println("Get car from storage + service works: " + a.toString());
+                            return a;
+                        } else {
+                            Service.setOptions(a, options);
+                            storage.deleteFromStorage(a);
+                            System.out.println("Get car from storage + set options + service works: " + a.toString());
                             return a;
                         }
                     }
@@ -95,7 +109,8 @@ public class Factory implements CreateCar {
         return create(model, engineVolume, color, wheelSize, options);
     }
 
-    private boolean orderProperties(Model model, Color color, EngineVolume engineVolume, WheelSize wheelSize) {
+    private boolean orderProperties(Model model, Color
+            color, EngineVolume engineVolume, WheelSize wheelSize) {
         boolean correctProperties = false;
         boolean correctModel = false;
         boolean correctColor = false;
@@ -120,19 +135,6 @@ public class Factory implements CreateCar {
         }
         return correctProperties;
     }
-
 }
-
-//    private Car forServiceCar(Car car, Color color, WheelSize wheelSize) {
-//
-//        if (!car.getColor().equals(color)) {
-//            Service.changeColor(car, color);
-//        }
-//        if (!car.getWheelSize().equals(wheelSize)) {
-//            Service.changeWheelSize(car, wheelSize);
-//        }
-//
-//
-//}
 
 

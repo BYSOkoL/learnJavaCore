@@ -1,6 +1,6 @@
 package dmitry.sokolov.homework.third.factory;
-import dmitry.sokolov.homework.third.*;
-import dmitry.sokolov.homework.third.enums.Option;
+
+import dmitry.sokolov.homework.third.Car;
 
 public class Storage {
   public Car[] storage;

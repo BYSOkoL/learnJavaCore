@@ -5,17 +5,17 @@ import dmitry.sokolov.homework.third.enums.Option;
 import dmitry.sokolov.homework.third.enums.WheelSize;
 
 public class Service {
-    public void changeColor(Car car, Color color) {
+    public static void changeColor(Car car, Color color) {
         if ((car != null && color != null) && (car.color != color)) {
             car.setColor(color);
         }
     }
-    public void changeWheelSize(Car car, WheelSize wheelSize) {
+    public static void changeWheelSize(Car car, WheelSize wheelSize) {
         if ((car != null && wheelSize != null) && (car.wheelSize != wheelSize)) {
             car.setWheelSize(wheelSize);
         }
     }
-    public void addOption(Car car, Option option) {
+    public static void addOption(Car car, Option option) {
         Option[] newOptions = new Option[car.options.length + 1];
         for (var i = 0; i < newOptions.length; i++) {
 
@@ -33,7 +33,7 @@ public class Service {
         }
 
     }
-    public void deleteOption(Car car, Option option) {
+    public static void deleteOption(Car car, Option option) {
         for (Option seekOption :
                 car.options) {
             if (seekOption == option) {
@@ -53,7 +53,7 @@ public class Service {
         }
     }
 
-    public void setOptions (Car car, Option[] options){
+    public static void setOptions (Car car, Option[] options){
         car.options = options;
     }
 }
