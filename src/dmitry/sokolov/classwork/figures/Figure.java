@@ -1,4 +1,4 @@
-package dmitry.sokolov.classwork.Task6.figures;
+package dmitry.sokolov.classwork.figures;
 
 public abstract class Figure {
     private final String name;

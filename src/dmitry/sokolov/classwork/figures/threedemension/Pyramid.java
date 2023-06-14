@@ -1,16 +1,16 @@
-package dmitry.sokolov.classwork.Task6.figures.threedemension;
+package dmitry.sokolov.classwork.figures.threedemension;
 
-import dmitry.sokolov.classwork.Task6.figures.interfaces.Angle;
-import dmitry.sokolov.classwork.Task6.figures.interfaces.Area;
-import dmitry.sokolov.classwork.Task6.figures.interfaces.Rib;
+import dmitry.sokolov.classwork.figures.interfaces.Angle;
+import dmitry.sokolov.classwork.figures.interfaces.Area;
+import dmitry.sokolov.classwork.figures.interfaces.Rib;
 
-public class Pyramide extends ThreeDimension implements Rib, Angle, Area {
+public class Pyramid extends ThreeDimension implements Rib, Angle, Area {
     private final double a;
     private final double b;
     private final double c;
     private final double h;
 
-    public Pyramide(String name, double a, double b, double c, double h) {
+    public Pyramid(String name, double a, double b, double c, double h) {
         super(name);
         this.a = a;
         this.b = b;

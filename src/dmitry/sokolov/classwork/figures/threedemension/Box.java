@@ -1,8 +1,8 @@
-package dmitry.sokolov.classwork.Task6.figures.threedemension;
+package dmitry.sokolov.classwork.figures.threedemension;
 
-import dmitry.sokolov.classwork.Task6.figures.interfaces.Angle;
-import dmitry.sokolov.classwork.Task6.figures.interfaces.Area;
-import dmitry.sokolov.classwork.Task6.figures.interfaces.Rib;
+import dmitry.sokolov.classwork.figures.interfaces.Angle;
+import dmitry.sokolov.classwork.figures.interfaces.Area;
+import dmitry.sokolov.classwork.figures.interfaces.Rib;
 
 public class Box extends ThreeDimension implements Rib, Angle, Area {
     private final double a;

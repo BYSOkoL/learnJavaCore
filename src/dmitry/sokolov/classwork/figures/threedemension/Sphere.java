@@ -1,4 +1,4 @@
-package dmitry.sokolov.classwork.Task6.figures.threedemension;
+package dmitry.sokolov.classwork.figures.threedemension;
 
 public class Sphere extends ThreeDimension {
     private final double r;

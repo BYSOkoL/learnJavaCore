@@ -1,4 +1,4 @@
-package dmitry.sokolov.classwork.Task6.figures.threedemension;
+package dmitry.sokolov.classwork.figures.threedemension;
 
 public class Cube extends Box {
     public Cube(String name, double a, double b, double c) {

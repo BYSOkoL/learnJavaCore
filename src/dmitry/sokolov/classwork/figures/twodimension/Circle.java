@@ -1,4 +1,4 @@
-package dmitry.sokolov.classwork.Task6.figures.twodimension;
+package dmitry.sokolov.classwork.figures.twodimension;
 
 public class Circle extends TwoDimension {
     private final double r;

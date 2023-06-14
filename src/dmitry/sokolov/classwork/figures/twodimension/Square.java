@@ -1,4 +1,4 @@
-package dmitry.sokolov.classwork.Task6.figures.twodimension;
+package dmitry.sokolov.classwork.figures.twodimension;
 
 public class Square extends Rectangle {
     public Square(String name, double a) {

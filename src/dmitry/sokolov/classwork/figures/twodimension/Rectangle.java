@@ -1,17 +1,16 @@
-package dmitry.sokolov.classwork.Task6.figures.twodimension;
+package dmitry.sokolov.classwork.figures.twodimension;
 
-import dmitry.sokolov.classwork.Task6.figures.interfaces.Angle;
+import dmitry.sokolov.classwork.figures.interfaces.Angle;
 
-public class Triangle extends TwoDimension implements Angle {
+public class Rectangle extends TwoDimension implements Angle {
     private final double a;
     private final double b;
-    private final double c;
 
-    public Triangle(String name, double a, double b, double c) {
+    public Rectangle(String name, double a, double b) {
         super(name);
         this.a = a;
         this.b = b;
-        this.c = c;
+
     }
 
     @Override
@@ -26,10 +25,9 @@ public class Triangle extends TwoDimension implements Angle {
 
     @Override
     public String toString() {
-        return "Triangle{" +
+        return "Rectangle{" +
                 "a=" + a +
                 ", b=" + b +
-                ", c=" + c +
                 '}';
     }
 }
