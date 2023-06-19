@@ -7,4 +7,5 @@ public interface Messages {
     String WIN_MESSAGE = "You WIN! used steps count: %s";
     String SECRET_NUMBER_BIGGER = "Secret number bigger than number";
     String SECRET_NUMBER_LESS = "Secret number less than number";
+    String ERROR_MESSAGE = "Something went wrong, pls restart the game";
 }

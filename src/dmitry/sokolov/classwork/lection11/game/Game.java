@@ -41,10 +41,18 @@ public class Game {
                 maxNumber
         ));
         secretNumber = generateNumberInRange(minNumber, maxNumber);
+        try {
+            name = READER.readLine();
+            game();
+        } catch (IOException e) {
+            print(ERROR_MESSAGE);
+        }
     }
 
     private void game() throws IOException {
-        name = READER.readLine();
+        print(format(NUMBER_INCORRECT_MESSAGE,
+                minNumber,
+                maxNumber));
         while (true) {
             int userNumber = readNumber(READER,
                     format(NUMBER_INCORRECT_MESSAGE,
