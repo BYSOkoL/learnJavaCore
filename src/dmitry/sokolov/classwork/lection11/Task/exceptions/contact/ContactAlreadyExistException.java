@@ -1,4 +1,5 @@
-package roman.lis.phone.exceptions;
+package dmitry.sokolov.classwork.lection11.Task.exceptions.contact;
+
 
 public class ContactAlreadyExistException extends RuntimeException {
     public ContactAlreadyExistException(String message) {

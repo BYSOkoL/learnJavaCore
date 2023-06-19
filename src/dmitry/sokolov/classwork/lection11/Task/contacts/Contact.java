@@ -1,16 +1,24 @@
-package roman.lis.phone.contacts;
+package dmitry.sokolov.classwork.lection11.Task.contacts;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class Contact {
-    private final Set<String> work = new HashSet<>();
-    private final Set<String> normal = new HashSet<>();
+    private final Set<String> work;
+    private final Set<String> normal;
     private final String name;
 
     public Contact(String name) {
         this.name = name;
+        work = new HashSet<>();
+        normal = new HashSet<>();
     }
+    public Contact(Contact contact) {
+        this.name = contact.name;
+        this.work = contact.work;
+        this.normal = contact.normal;
+    }
+
 
     public void addNumber(NumberType type, String number) {
         if (type == NumberType.NORMAL) {
@@ -20,32 +28,39 @@ public class Contact {
         }
     }
 
-    public void removeNumber(NumberType type, String number) {
+    public boolean removeNumber(NumberType type, String number) {
         if (type == NumberType.NORMAL) {
-            normal.remove(number);
+            return normal.remove(number);
         } else {
-            work.remove(number);
+            return work.remove(number);
         }
     }
-    public void changeNumber(NumberType type,
+    public boolean changeNumber(NumberType type,
                              String oldNumber,
                              String newNumber) {
         if (type == NumberType.NORMAL) {
-            changeNumber(normal, oldNumber, newNumber);
+            return changeNumber(normal, oldNumber, newNumber);
         } else {
-            changeNumber(work, oldNumber, newNumber);
+            return changeNumber(work, oldNumber, newNumber);
         }
-
     }
 
     public String getName() {
         return name;
     }
 
-    private void changeNumber(Set<String> numbers,
+    private boolean changeNumber(Set<String> numbers,
                               String oldNumber,
                               String newNumber) {
         numbers.add(newNumber);
-        numbers.remove(oldNumber);
+        return numbers.remove(oldNumber);
     }
+
+    public boolean isNumberExist (NumberType type, String number) {
+        if (type == NumberType.WORK) {
+            return normal.contains(number);
+        }
+        return  work.contains(number);
+    }
+
 }
