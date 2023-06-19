@@ -2,6 +2,9 @@ package dmitry.sokolov.classwork.lection11.game;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.Random;
 
 public class GameUtils {
@@ -25,5 +28,12 @@ public class GameUtils {
     }
     public static int generateNumberInRange(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
+    }
+    public static void writeStringToFile(Path pathToFile, String data, String errorMessage) {
+        try {
+            Files.writeString(pathToFile, data, StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            print(errorMessage);
+        }
     }
 }

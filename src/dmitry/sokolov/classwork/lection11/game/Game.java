@@ -3,6 +3,8 @@ package dmitry.sokolov.classwork.lection11.game;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -19,8 +21,9 @@ public class Game {
 
     private final int minNumber;
     private final int maxNumber;
+    private final Path pathToFile;
 
-    public Game(int minNumber, int maxNumber) {
+    public Game(int minNumber, int maxNumber, String pathToFile) {
         if (maxNumber <= minNumber) {
             throw new IllegalArgumentException(
                     format(
@@ -32,6 +35,7 @@ public class Game {
         }
         this.minNumber = minNumber;
         this.maxNumber = maxNumber;
+        this.pathToFile = Paths.get(pathToFile);
     }
 
     public void start() {
@@ -44,6 +48,7 @@ public class Game {
         try {
             name = READER.readLine();
             game();
+            writeStringToFile(pathToFile, "User " + name + " used steps " + stepCount, FAIL_TO_WRITE_RESULT);
         } catch (IOException e) {
             print(ERROR_MESSAGE);
         }

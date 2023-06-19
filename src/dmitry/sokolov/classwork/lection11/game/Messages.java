@@ -8,4 +8,5 @@ public interface Messages {
     String SECRET_NUMBER_BIGGER = "Secret number bigger than number";
     String SECRET_NUMBER_LESS = "Secret number less than number";
     String ERROR_MESSAGE = "Something went wrong, pls restart the game";
+    String FAIL_TO_WRITE_RESULT = "Write result ERROR";
 }
