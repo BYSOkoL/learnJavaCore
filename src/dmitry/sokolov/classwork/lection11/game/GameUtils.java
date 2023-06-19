@@ -31,7 +31,7 @@ public class GameUtils {
     }
     public static void writeStringToFile(Path pathToFile, String data, String errorMessage) {
         try {
-            Files.writeString(pathToFile, data, StandardOpenOption.APPEND);
+            Files.writeString(pathToFile, data + "\n", StandardOpenOption.APPEND);
         } catch (IOException e) {
             print(errorMessage);
         }
