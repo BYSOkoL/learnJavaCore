@@ -9,7 +9,6 @@ public class Task7 {
         FileReader file = new FileReader("C:\\Users\\User\\Documents\\GitHub\\learnJavaCore\\src\\dmitry\\sokolov\\homework\\fourth\\Task7\\INPUT");
         int number;
         while ((number = file.read()) != -1) {
-            System.out.print((char) number);
         }
         List<String> strings = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\User\\Documents\\GitHub\\learnJavaCore\\src\\dmitry\\sokolov\\homework\\fourth\\Task7\\INPUT"))) {
