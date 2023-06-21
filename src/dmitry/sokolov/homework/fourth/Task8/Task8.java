@@ -7,13 +7,9 @@ import java.util.List;
 public class Task8 {
     public static void main(String[] args) throws IOException {
         FileReader file = new FileReader("C:\\Users\\User\\Documents\\GitHub\\learnJavaCore\\src\\dmitry\\sokolov\\homework\\fourth\\Task8\\INPUT");
-        int number;
         String buffRead;
         String buffRead2;
 
-        while ((number = file.read()) != -1) {
-            System.out.print((char) number);
-        }
         List<String> strings = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\User\\Documents\\GitHub\\learnJavaCore\\src\\dmitry\\sokolov\\homework\\fourth\\Task8\\INPUT"))) {
             while ((buffRead = reader.readLine()) != null) {
