@@ -1,5 +1,10 @@
 package dmitry.sokolov.classwork.carsClass;
 
+import dmitry.sokolov.homework.third.enums.EngineVolume;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class CarUtils {
@@ -23,4 +28,13 @@ public class CarUtils {
         }
         return result;
     }
+
+//    public static void writeToFileWithCapacity (Map<Integer, List<Car>> cars, int engineVolume) {
+//
+////        try (BufferedWriter buffWriter = new BufferedWriter(new FileWriter("C:\\Users\\User\\Documents\\GitHub\\learnJavaCore\\src\\dmitry\\sokolov\\classwork\\carsClass\\FILE"))) {
+////        } catch (IOException e) {
+////            e.printStackTrace();
+////            e.printStackTrace();
+////        }
+//    }
 }

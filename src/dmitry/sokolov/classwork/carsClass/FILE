@@ -1,0 +1,3 @@
+[Car{name='5', carModel=MODEL_Y, engineCapacity=2}, Car{name='9', carModel=MODEL_Z, engineCapacity=2}]
+[Car{name='0', carModel=MODEL_Z, engineCapacity=1}, Car{name='2', carModel=MODEL_Z, engineCapacity=1}, Car{name='4', carModel=MODEL_Z, engineCapacity=1}, Car{name='6', carModel=MODEL_Y, engineCapacity=1}, Car{name='8', carModel=MODEL_Y, engineCapacity=1}]
+null
