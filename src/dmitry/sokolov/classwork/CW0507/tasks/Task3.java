@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Task3 {
+    private static final Random RANDOM = new Random(100);
 
     public static class Generator extends Thread {
         private List<Integer> list;
@@ -15,33 +16,44 @@ public class Task3 {
 
         @Override
         public void run() {
-            Random random = new Random();
-            for (int i = 0; i < 100; i++) {
-                int randomNumber = random.nextInt();
-                list.add(randomNumber);
+
+            while (true) {
+                var number = RANDOM.nextInt(100);
+                synchronized (list) {
+                    if (list.size() < 100) {
+                        list.add(number);
+                        if (list.size() == 100) {
+                            break;
+                        }
+                    } else {
+                        break;
+                    }
+                }
                 try {
                     Thread.sleep(200);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                } catch (InterruptedException ignored) {
                 }
             }
         }
 
-        public static void main(String[] args) {
+                public static void main(String[] args) {
             List<Integer> numberList = new ArrayList<>();
-            Generator generator = new Generator(numberList);
-            generator.start();
+            Generator one = new Generator(numberList);
+            Generator two = new Generator(numberList);
+            Generator three = new Generator(numberList);
+            one.start();
+            two.start();
+            three.start();
 
             try {
-                generator.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                one.join();
+                two.join();
+                three.join();
+            } catch (InterruptedException ignored) {
             }
 
-            System.out.println("Сгенерированные числа:");
-            for (int number : numberList) {
-                System.out.println(number);
-            }
+            System.out.println(numberList.size());
+
         }
     }
 }
