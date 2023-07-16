@@ -39,7 +39,7 @@ public class Countries {
                             robot = new Robot();
                         }
                     }
-                    System.out.println(countryName + " - " + robotsCount + " robots, needs parts for new robot " + robot);
+                    System.out.println(countryName + " - " + robotsCount + " robots, needs part(s) for new robot: " + robot);
                     factory.wait();
                 }
             }
