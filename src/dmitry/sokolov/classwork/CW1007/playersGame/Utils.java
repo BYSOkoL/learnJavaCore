@@ -57,7 +57,7 @@ public class Utils {
             if (o instanceof List<?>) {
                 return (List<Player>) o;
             } else {
-               throw new ReadPlayersRuntimeException("File do not have correct List of players")
+               throw new ReadPlayersRuntimeException("File do not have correct List of players");
             }
         } catch (Exception e) {
             throw new ReadPlayersRuntimeException("error", e);
