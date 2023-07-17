@@ -1,6 +1,14 @@
 package dmitry.sokolov.classwork.CW1707;
 
-public class Box extends AbstractBox implements Printable{
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
+@Reflect(
+        name = "box",
+        value = "some object"
+)
+public class Box extends AbstractBox implements Printable {
+
     private final String type;
     public String size = "big";
 
@@ -13,12 +21,15 @@ public class Box extends AbstractBox implements Printable{
     public void print() {
         System.out.printf("Box{x: %s, y: %s, z: %s, type: %s}", x, y, z, type);
     }
+
     public void printNameWithPrefix(String pref) {
         System.out.println(pref + name);
     }
+
     public int getValue() {
         return x * y * z;
     }
+
     private String getSize() {
         return size;
     }
@@ -27,6 +38,7 @@ public class Box extends AbstractBox implements Printable{
     public String toString() {
         return String.format("Box{x: %s, y: %s, z: %s", x, y, z);
     }
+
     public String getType() {
         return type;
     }

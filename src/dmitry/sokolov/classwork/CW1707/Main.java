@@ -43,7 +43,7 @@ public class Main {
 //
 //        try {
 //            Box box = new Box(1, 2, 3);
-            Class<?> boxClass = Box.class;
+//            Class<?> boxClass = Box.class;
 //            Method method = boxClass.getMethod("printNameWithPrefix", String.class);
 //            method.invoke(box, "MyPrefix");
 //
@@ -51,28 +51,28 @@ public class Main {
 //            print.invoke(box);
 //        } catch (Exception ignored) {}
 //    }
-        List<Object> boxList = new ArrayList<>();
-        try {
-            Constructor<?> constructor1 = Box.class.getConstructor(int.class, int.class, int.class);
-            Object box1 = constructor1.newInstance(1, 1, 1);
+//        List<Object> boxList = new ArrayList<>();
+//        try {
+//            Constructor<?> constructor1 = Box.class.getConstructor(int.class, int.class, int.class);
+//            Object box1 = constructor1.newInstance(1, 1, 1);
 //            System.out.println(box1);
-            boxList.add(box1);
-            Constructor<?> constructor2 = Box.class.getConstructor(int.class, int.class, int.class);
-            Object box2 = constructor2.newInstance(2, 2, 2);
+//            boxList.add(box1);
+//            Constructor<?> constructor2 = Box.class.getConstructor(int.class, int.class, int.class);
+//            Object box2 = constructor2.newInstance(2, 2, 2);
 //            System.out.println(box2);
-            boxList.add(box2);
-            Constructor<?> constructor3 = Box.class.getConstructor(int.class, int.class, int.class);
-            Object box3 = constructor3.newInstance(3, 3, 3);
+//            boxList.add(box2);
+//            Constructor<?> constructor3 = Box.class.getConstructor(int.class, int.class, int.class);
+//            Object box3 = constructor3.newInstance(3, 3, 3);
 //            System.out.println(box3);
-            boxList.add(box3);
-            Method print = boxClass.getMethod("print");
-            print.invoke(box1);
-            System.out.println();
-            print.invoke(box2);
-            System.out.println();
-            print.invoke(box3);
-            System.out.println();
-        } catch (Exception ignored) {}
-        System.out.println(boxList);
+//            boxList.add(box3);
+//            Method print = boxClass.getMethod("print");
+//            print.invoke(box1);
+//            System.out.println();
+//            print.invoke(box2);
+//            System.out.println();
+//            print.invoke(box3);
+//            System.out.println();
+//        } catch (Exception ignored) {}
+//        System.out.println(boxList);
     }
 }
