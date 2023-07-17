@@ -8,6 +8,7 @@ public class Factory {
     private static final Random RANDOM = new Random();
     private final Map<RobotParts, Integer> StorageForParts;
     public Factory(Map<RobotParts, Integer> robotPartsStorage) {
+
         this.StorageForParts = robotPartsStorage;
     }
     public void produceParts() {
